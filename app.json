@@ -1,0 +1,17 @@
+{
+  "name": "Django landscape site test",
+  "description": "Heroku test with django",
+  "image": "heroku/python",
+  "repository": "https://github.com/mmmcorpsvit/stroykapremont",
+  "keywords": ["python", "django"],
+  "addons": [ "heroku-postgresql" ],
+  "environments": {
+    "test": {
+      "scripts": {
+	"setup": "python manage.py thumbnail clear"
+        "test-setup": "python manage.py collectstatic --noinput  ",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
