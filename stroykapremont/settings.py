@@ -14,7 +14,7 @@ SECRET_KEY = 'a5cro*3uyn5ycw@p!8$z*=)u^qqu8i^zxc%^apelc28)24a^g_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.137.1']
 
 SITE_NAME = 'ООО "Стройкаремонт" '
 
