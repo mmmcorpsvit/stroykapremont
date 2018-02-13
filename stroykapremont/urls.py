@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
+from django.views.generic import RedirectView, TemplateView
+
 from stroykapremont import settings
 
 from landing_page import urls as base_urls, views
@@ -23,10 +25,16 @@ from landing_page import urls as base_urls, views
 # from . import views
 # from stroykapremont.views import home_view
 
+# favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
+
 urlpatterns = [
+  # url(r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/images/favicon.ico'}),
+
   url(r'^$', views.home, name='home'),
+
   url(r'^ru/$', views.page),
   url(r'^en/$', views.page),
+
 
   url(r'^admin/', admin.site.urls),
   url(r'^tinymce/', include('tinymce.urls')),

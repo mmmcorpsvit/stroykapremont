@@ -13,13 +13,18 @@ def page(request):
     request.LANGUAGE_CODE = translation.get_language()
 
     data = dict()
-    data['portfolio'] = Projects.objects.all()
+
+    projects = Projects.objects.all()
+    projects_images = Project_Images.objects.all()
 
     # try:
     #     portfolio = Projects.objects.all()
     # except Projects.DoesNotExist:
     #     raise Http404("Poll does not exist")
-    return render(request, 'page.html', {'data': data})
+    return render(request, 'page.html', {'data': data,
+                                         'projects': projects,
+                                         'projects_images': projects_images,
+                                         })
 
 
 def home(request):

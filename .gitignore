@@ -27,3 +27,4 @@ dist/
 /node_modules/
 webpack-bundle.json
 /venv/
+*.sqlite3

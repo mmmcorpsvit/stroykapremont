@@ -16,12 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.137.1']
 
-SITE_NAME = 'ООО "Стройкаремонт" '
-
-
-SETTINGS_EXPORT = [
-    'SITE_NAME',
-]
+SITE_NAME = 'ООО "Стройкапремонт"'
 
 
 # Application definition
@@ -146,3 +141,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+SETTINGS_EXPORT = [
+    'SITE_NAME',
+]
