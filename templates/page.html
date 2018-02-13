@@ -11,7 +11,7 @@
                 <li><a href="/">{% trans "Home" %}</a></li>
                 <li><a href="#service">{% trans "Services" %}</a></li>
                 <li><a href="#Portfolio">{% trans "Portfolio" %}</a></li>
-                <li class="small-logo"><a href="#service"><img src="{{ STATIC_URL }}img/small-logo.png" alt=""></a></li>
+                <li class="small-logo"><a href="#service"><img src="{{ STATIC_URL }}img/small-logo.svg" alt=""></a></li>
                 <li><a href="#client">{% trans "Clients" %}</a></li>
                 <li><a href="#team">{% trans "Team" %}</a></li>
                 <li><a href="#contact">{% trans "Contact" %}</a></li>
@@ -349,5 +349,7 @@
             </div>
         </section>
     </div>
+
+    {% include 'footer.html' %}
 
 {% endblock %}

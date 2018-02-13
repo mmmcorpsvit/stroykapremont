@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1">
 
     <title>{{ settings.SITE_NAME }}</title>
+
+    {% include 'favicon.html' %}
+
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
 
@@ -18,7 +21,7 @@
     <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css">
     <link href="{{ STATIC_URL }}css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="{{ STATIC_URL }}css/responsive.css" rel="stylesheet" type="text/css">
+{#    <link href="{{ STATIC_URL }}css/responsive.css" rel="stylesheet" type="text/css">#}
     <link href="{{ STATIC_URL }}css/animate.css" rel="stylesheet" type="text/css">
 
     <!--[if IE]><style type="text/css">.pie {behavior:url({{ STATIC_URL }}PIE.htc);}</style><![endif]-->
@@ -39,21 +42,6 @@
 {% block content %}
 {% endblock content %}
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer-logo"><a href="#"><img src="{{ STATIC_URL }}img/footer-logo.png" alt=""></a></div>
-        <span class="copyright">&copy; {{ settings.SITE_NAME }}. Все права защищены.</span>
-        <div class="credits">
-            <!-- 
-                All the links in the footer should remain intact. 
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Knight
-            -->
-            by <a href="http://www.weblancer.net/?affiliate=MMM_Corp">MMM_Corp</a>
-        </div>
-    </div>
-</footer>
 
 
 <script type="text/javascript">
