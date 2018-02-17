@@ -51,11 +51,13 @@
 
                     <div class="element-item Portfolio-box transition {{ project_image.category.slug }}"
                          data-category="{{ project_image.category.slug }}">
+
                         <a data-type="image" data-fancybox="{{ project_image.category.slug }}"
                            data-caption="{{ project_image.title }}"
-                           href="{{ MEDIA_URL }}filer_public/01/3f/013f26b5-1283-49f5-9c7d-2becbabf453c/01_match_architects_akademica.jpg">
+                           href="{{ project_image.image.url }}">
+
                             <img src="{% thumbnail project_image.image 400x300 crop upscale %}"
-                                 alt="{{ project_image.category.slug }}">
+                                 alt="{{ project_image.title }}">
                         </a>
                     </div>
 
