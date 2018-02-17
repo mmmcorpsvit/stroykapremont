@@ -36,7 +36,7 @@
 
 {#            <div id="filters" class="Portfolio-nav wow fadeIn delay-02s"></div>#}
 
-            <div id="filters" class="button-group wow fadeIn delay-02s">
+            <div id="filters" class="button-group filter-button-group wow fadeIn delay-02s">
                 <button class="button is-checked" data-filter="*">{% trans "Все" %}</button>
 
                 {% for project in projects %}
@@ -52,7 +52,7 @@
                     <div class="element-item Portfolio-box transition {{ project_image.category.slug }}"
                          data-category="{{ project_image.category.slug }}">
 
-                        <a data-type="image" data-fancybox="{{ project_image.category.slug }}"
+                        <a class="fancybox" data-type="image" data-fancybox="{{ project_image.category.slug }}"
                            data-caption="{{ project_image.title }}"
                            href="{{ project_image.image.url }}">
 
