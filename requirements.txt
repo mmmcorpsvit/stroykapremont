@@ -3,7 +3,7 @@ Pillow == 5.0.0
 
 easy-thumbnails
 django-filer == 1.3.0
-django-tinymce
+# django-tinymce
 django-admin-sortable
 # django-bootstrap4
 django-settings-export == 1.2.1

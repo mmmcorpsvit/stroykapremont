@@ -11,6 +11,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'a5cro*3uyn5ycw@p!8$z*=)u^qqu8i^zxc%^apelc28)24a^g_'
 
+API_GOOGLE_KEY = 'AIzaSyCDv-y99GoYalDSxIPs0FfgS_B8KLyaAVs'
+API_GOOGLE_MAP_IFRAME_LINK = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.6038460263567!2d37.558834115930345!3d55.74801188055203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bc5febf7f23%3A0x4421ea9535c2860!2z0KHQotCg0J7QmdCa0JDQn9Cg0JXQnNCe0J3Qoi0y!5e0!3m2!1suk!2sua!4v1518783847645'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -144,4 +147,6 @@ MEDIA_URL = '/media/'
 
 SETTINGS_EXPORT = [
     'SITE_NAME',
+    'API_GOOGLE_KEY',
+    'API_GOOGLE_MAP_IFRAME_LINK',
 ]

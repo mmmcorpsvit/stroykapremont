@@ -2,17 +2,25 @@
 {% load static %}
 
 <!doctype html>
-<html>
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
 
     <title>{{ settings.SITE_NAME }}</title>
 
+    <meta name="description" content="{{ settings.SITE_NAME }}">
+    <meta name="author" content="{{ settings.SITE_NAME }}">
+
+    <meta name="og:type" content="website">
+    <meta property="og:title" content="{{ site.name }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{% static "favicons/favicon.png" %}">
+
     {% include 'favicon.html' %}
 
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/favicon.ico" type="img/x-icon">
 
 
     {% block extra_head %}
@@ -25,8 +33,67 @@
 {% endblock content %}
 
 
-
 <script>
+    // external js: isotope.pkgd.js
+
+    <!--portfoilo start -->
+    // init Isotope
+    var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows',
+        getSortData: {
+            name: '.name',
+            symbol: '.symbol',
+            number: '.number parseInt',
+            category: '[data-category]',
+            weight: function (itemElem) {
+                var weight = $(itemElem).find('.weight').text();
+                return parseFloat(weight.replace(/[\(\)]/g, ''));
+            }
+        }
+    });
+
+    // filter functions
+    var filterFns = {
+        // show if number is greater than 50
+        numberGreaterThan50: function () {
+            var number = $(this).find('.number').text();
+            return parseInt(number, 10) > 50;
+        },
+        // show if name ends with -ium
+        ium: function () {
+            var name = $(this).find('.name').text();
+            return name.match(/ium$/);
+        }
+    };
+
+    // bind filter button click
+    $('#filters').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        // use filterFn if matches value
+        filterValue = filterFns[filterValue] || filterValue;
+        $grid.isotope({filter: filterValue});
+    });
+
+    // bind sort button click
+    $('#sorts').on('click', 'button', function () {
+        var sortByValue = $(this).attr('data-sort-by');
+        $grid.isotope({sortBy: sortByValue});
+    });
+
+    // change is-checked class on buttons
+    $('.button-group').each(function (i, buttonGroup) {
+        var $buttonGroup = $(buttonGroup);
+        $buttonGroup.on('click', 'button', function () {
+            $buttonGroup.find('.is-checked').removeClass('is-checked');
+            $(this).addClass('is-checked');
+        });
+    });
+
+    <!--portfoilo end-->
+
+
+
     $(document).ready(function (e) {
         $('#test').scrollToFixed();
         $('.res-nav_click').click(function () {
@@ -36,9 +103,8 @@
         });
 
     });
-</script>
 
-<script>
+
     wow = new WOW(
         {
             animateClass: 'animated',
@@ -46,10 +112,8 @@
         }
     );
     wow.init();
-</script>
 
 
-<script>
     $(window).load(function () {
 
         $('.main-nav li a, .servicelink').bind('click', function (event) {
@@ -69,14 +133,10 @@
             }
             event.preventDefault();
         });
-    })
-</script>
+    });
 
-<script>
 
     $(window).load(function () {
-
-
         var $container = $('.portfolioContainer'),
             $body = $('body'),
             colW = 375,

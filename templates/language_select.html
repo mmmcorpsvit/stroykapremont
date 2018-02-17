@@ -5,7 +5,6 @@
     <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="{{ STATIC_URL }}css/animate.css" rel="stylesheet" type="text/css">
 
-
     <style>
         body {
             background: url("{{ STATIC_URL }}img/pw_maze_black_2X.png") repeat;
@@ -31,15 +30,10 @@
             overflow: auto;
         }
 
-        {#.block {#}
-        {#    background: #60a839;#}
-
         img {
             display: block;
             border: none;
         }
-
-
     </style>
 {% endblock %}
 
@@ -49,22 +43,15 @@
         <div class="block">
 
             <header class="header" id="header"><!--header-start-->
-                {#        <div class="container">#}
                 <figure class="logo animated fadeInDown delay-07s">
-                    <a href="#"><img src="{{ STATIC_URL }}img/logo.svg" alt="logo" width="130" height="80"></a>
-                    {#                <a href="#"><img src="{{ STATIC_URL }}img/logo_.png" alt=""></a>#}
+                    <a href="#"><img itemprop="logo" src="{{ STATIC_URL }}img/logo.svg" alt="logo" width="130" height="80"></a>
                 </figure>
-                {#            <h1 class="animated fadeInDown delay-07s">Welcome To Knight Studios</h1>#}
-                {#            <ul class="we-create animated fadeInUp delay-1s">#}
-                {#                <li>We are a digital agency that loves crafting beautiful websites.</li>#}
-                {#            </ul>#}
 
-                <a class="link animated fadeInUp delay-1s servicelink" href="/ru/">Русский</a>
-                <a class="link animated fadeInUp delay-1s servicelink" href="/en/">English</a>
-                {#        </div>#}
+                <a class="link animated fadeInUp delay-1s servicelink" href="ru/">Русский</a>
+                <a class="link animated fadeInUp delay-1s servicelink" href="en/">English</a>
+
             </header><!--header-end-->
 
-            {#    {% include 'footer.html' %}#}
         </div>
     </div>
 {% endblock %}

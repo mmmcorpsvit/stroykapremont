@@ -26,12 +26,12 @@ from filer.fields.image import FilerImageField
 
 class Projects(SortableMixin):
     order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
-    title = models.CharField(max_length=30, unique=True, verbose_name='название')
-    slug = models.SlugField(unique=True)
-    desc = HTMLField(verbose_name='описание')
+    title = models.CharField(max_length=30, unique=True, verbose_name='уникальное название')
+    slug = models.SlugField(unique=True)    # need for js frontend
+    # desc = HTMLField(verbose_name='описание')
 
     # image = FilerFileField(upload_to='project_cats/', blank=True, verbose_name=IMAGE_STR)
-    image = FilerImageField(null=True, blank=True, related_name="category")
+    # image = FilerImageField(null=True, blank=True, related_name="category")
 
     class Meta(object):
         verbose_name = 'Категория проекта'
@@ -57,6 +57,7 @@ class Projects(SortableMixin):
 class Project_Images(SortableMixin):
     order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
     category = models.ForeignKey(Projects, on_delete=models.CASCADE, default=0, verbose_name='категория')
+    title = models.CharField(max_length=30, verbose_name='название', default='')
     # image = FilerFileField(upload_to='project_details/', blank=True, verbose_name=IMAGE_STR)
     image = FilerImageField(null=True, blank=True, related_name="project")
 
@@ -80,3 +81,19 @@ class Project_Images(SortableMixin):
 
     # def __str__(self):
     #     return ''
+
+
+class SiteSettings(models.Model):
+    site_name = models.TextField(max_length=50)
+    site_description = models.TextField(max_length=100)
+
+    contact_streetAddress = models.TextField(max_length=200)
+    contact_addressLocality = models.TextField(max_length=200)
+    contact_addressRegion = models.TextField(max_length=200)
+
+    contact_telephone = models.TextField(max_length=30)
+
+    contact_hours = HTMLField()
+
+
+
