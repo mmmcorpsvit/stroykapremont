@@ -3,18 +3,22 @@
 {% load i18n %}
 
 {% block extra_head %}
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600'
-          rel='stylesheet' type='text/css'>
+{#    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>#}
+{#    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>#}
 
     <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css">
-    <link href="{{ STATIC_URL }}css/font-awesome.css" rel="stylesheet" type="text/css">
+{#    <link href="{{ STATIC_URL }}css/font-awesome.css" rel="stylesheet" type="text/css">#}
+{#    <link href="{{ STATIC_URL }}css/fontawesome-all.min.css" rel="stylesheet" type="text/css">#}
+
     <link href="{{ STATIC_URL }}css/responsive.css" rel="stylesheet" type="text/css">
     <link href="{{ STATIC_URL }}css/animate.css" rel="stylesheet" type="text/css">
 
 
     <link href="{{ STATIC_URL }}css/portfolio.css" rel="stylesheet" type="text/css">
+
+    <!--Font awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
     <!--[if IE]><style type="text/css">.pie {behavior:url({{ STATIC_URL }}PIE.htc);}</style><![endif]-->
 
@@ -49,11 +53,14 @@
         <div class="container">
             <ul class="main-nav">
                 <!--<li><a href="#header">Home</a></li>-->
-                <li><a href="/">{% trans "Главная" %}</a></li>
+
+{#                <li><a href="/">{% trans "Главная" %}</a></li>#}
                 <li><a href="#service">{% trans "Услуги" %}</a></li>
                 <li><a href="#Portfolio">{% trans "Портфолио" %}</a></li>
-                <li class="small-logo"><a href="#service"><img src="{{ STATIC_URL }}img/small-logo.svg" alt=""></a></li>
-                <li><a href="#client">{% trans "Клиенты" %}</a></li>
+
+                <li class="small-logo"><a href="/"><img src="{{ STATIC_URL }}img/small-logo.svg" alt=""></a></li>
+
+{#                <li><a href="#client">{% trans "Клиенты" %}</a></li>#}
                 <li><a href="#team">{% trans "Команда" %}</a></li>
                 <li><a href="#contact">{% trans "Контакты" %}</a></li>
             </ul>

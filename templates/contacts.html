@@ -18,21 +18,35 @@
 
         <div class="row">
             <div itemscope itemtype="http://schema.org/LocalBusiness" class="col-lg-6 col-sm-7 wow fadeInLeft">
+
                 <div class="contact-info-box address clearfix">
-                    <h3><i class=" icon-map-marker"></i>Address:</h3>
-                    <span>308 Negra Arroyo Lane<br>Albuquerque, New Mexico, 87111.</span>
+                    <h3><i class="fa fa-map-marker"></i>{% trans 'Адрес' %}:</h3>
+                    <span>{% trans 'Москва, ул. Привольная 70' %},<br>
+                        {% trans 'Корпус 1, хэт. 2, пом 12, ком. 32' %}.</span>
                 </div>
+
                 <div class="contact-info-box phone clearfix">
-                    <h3><i class="fa-phone"></i>Phone:</h3>
+                    <h3><i class="fa fa-phone"></i>{% trans 'Телефон' %}:</h3>
                     <a href="tel:01234567890"><span itemprop="telephone">1-800-BOO-YAHH</span></a>
                 </div>
+
                 <div class="contact-info-box email clearfix">
-                    <h3><i class="fa-pencil"></i>email:</h3>
-                    <span>hello@knightstudios.com</span>
+                    <h3><i class="fa fa-envelope-square"></i>Email:</h3>
+                    <span itemprop="email">edwikms@gmail.com</span>
                 </div>
+
                 <div class="contact-info-box hours clearfix">
-                    <h3><i class="fa-clock-o"></i>Hours:</h3>
-                    <span><strong>Monday - Thursday:</strong> 10am - 6pm<br><strong>Friday:</strong> People work on Fridays now?<br><strong>Saturday - Sunday:</strong> Best not to ask.</span>
+                    <h3><i class="fa fa-clock"></i>{% trans 'График' %}:</h3>
+                    <span>
+                        <strong>Пн - Пт:</strong> 9:00 - 17:00<br>
+                        <strong>Сб - Вс:</strong> Выходной</span>
+                </div>
+
+                <div class="contact-info-box hours clearfix">
+                    <h3><i class="fa fa-university"></i>{% trans 'Юр.лицо' %}:</h3>
+                    <a href="http://www.rusprofile.ru/egrul?ogrn=1187746131924">
+                        <span>Выписка из ЕГРЮЛ</span>
+                    </a>
                 </div>
 
 
