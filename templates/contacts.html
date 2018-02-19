@@ -1,28 +1,50 @@
 {% load i18n %}
 {% load static %}
 
-{#    <div itemscope itemtype="http://schema.org/LocalBusiness">#}
-{#        <h2><span itemprop="name">Super Shop</span></h2>#}
-{#        <p><span itemprop="description">A super shop that sells everything at super low prices.</span></p>#}
-{#        <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">#}
-{#            <span itemprop="streetAddress">123 Example Street</span>#}
-{#            <span itemprop="addressLocality">Example Town</span>,#}
-{#            <span itemprop="addressRegion">Essex</span>#}
-{#        </address>#}
-{#        Phone: <a href="tel:01234567890"><span itemprop="telephone">01234 567890</span></a>#}
-{#    </div>#}
-{##}
-
 <div class="container">
     <section class="main-section contact" id="contact">
 
         <div class="row">
             <div itemscope itemtype="http://schema.org/LocalBusiness" class="col-lg-6 col-sm-7 wow fadeInLeft">
+                <meta itemprop="name" content="{{ settings.SITE_NAME }}">
+                <meta itemprop="description"
+                      content="Строительство жилых и нежилых зданий. Производство электромонтажных работ.
+                      Производство штукатурных работ.
+                      Работы столярные и плотничные.
+                      Работы по устройству покрытий полов и облицовке стен.
+                      Производство малярных и стекольных работ.
+                      Производство прочих отделочных и завершающих работ.
+                      Работы строительные специализированные прочие, не включенные в другие группировки.
+                      Работы гидроизоляционные.
+                      Работы по установке строительных лесов и подмостей.
+                      Работы свайные и работы по строительству фундаментов.
+                      Работы бетонные и железобетонные.
+                      Работы по монтажу стальных строительных конструкций.
+                      Работы каменные и кирпичные.
+                      Работы по сборке и монтажу сборных конструкций.
+                      Работы строительные специализированные, не включенные в другие группировки.
+                      Торговля розничная скобяными изделиями, лакокрасочными материалами и стеклом в специализированных магазинах.
+                      Торговля розничная строительными материалами, не включенными в другие группировки, в специализированных магазинах.
+                      Торговля розничная прочими строительными материалами, не включенными в другие группировки, в специализированных магазинах.
+                      ">
+
+                {#                <meta itemprop="image" content="{{ STATIC_URL }}img/small-logo.svg">#}
+                <meta itemprop="image" content="https://st.weblancer.net/download/2567652_120xs.jpg">
+                <meta itemprop="priceRange" content="RUB"/>
+
 
                 <div class="contact-info-box address clearfix">
                     <h3><i class="fa fa-map-marker"></i>{% trans 'Адрес' %}:</h3>
-                    <span>{% trans 'Москва, ул. Привольная 70' %},<br>
-                        {% trans 'Корпус 1, хэт. 2, пом 12, ком. 32' %}.</span>
+
+                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        {% trans 'Москва, ул. Привольная, 70' %},<br>
+                        {% trans 'Корпус 1, хэт. 2, пом 12, ком. 32' %}.
+                    <meta itemprop="addressCountry" content="Россия">
+                    <meta itemprop="addressLocality" content="г. Москва">
+                    <meta itemprop="streetAddress" content="ул. Привольная, 70">
+                    <meta itemprop="postOfficeBoxNumber" content="Корпус 1, хэт. 2, пом 12, ком. 32">
+
+                    </span>
                 </div>
 
                 <div class="contact-info-box phone clearfix">
