@@ -7,3 +7,4 @@ django-filer == 1.3.0
 django-admin-sortable
 # django-bootstrap4
 django-settings-export == 1.2.1
+django-fullurl

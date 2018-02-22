@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load static %}
+{% load fullurl %}
 
 <div class="container">
     <section class="main-section contact" id="contact">
@@ -43,7 +44,6 @@
                     <meta itemprop="addressLocality" content="г. Москва">
                     <meta itemprop="streetAddress" content="ул. Привольная, 70">
                     <meta itemprop="postOfficeBoxNumber" content="Корпус 1, хэт. 2, пом 12, ком. 32">
-
                     </span>
                 </div>
 
@@ -53,19 +53,19 @@
                 </div>
 
                 <div class="contact-info-box email clearfix">
-                    <h3><i class="fa fa-envelope-square"></i>Email:</h3>
+                    <h3><i class="fa fa-envelope-o"></i>Email:</h3>
                     <span itemprop="email">edwikms@gmail.com</span>
                 </div>
 
                 <div class="contact-info-box hours clearfix">
-                    <h3><i class="fa fa-clock"></i>{% trans 'График' %}:</h3>
+                    <h3><i class="fa fa-clock-o"></i>{% trans 'График' %}:</h3>
                     <span>
                         <strong>Пн - Пт:</strong> 9:00 - 17:00<br>
                         <strong>Сб - Вс:</strong> Выходной</span>
                 </div>
 
                 <div class="contact-info-box hours clearfix">
-                    <h3><i class="fa fa-university"></i>{% trans 'Юр.лицо' %}:</h3>
+                    <h3><i class="fa-university"></i>{% trans 'Юр.лицо' %}:</h3>
                     <a href="http://www.rusprofile.ru/egrul?ogrn=1187746131924">
                         <span>Выписка из ЕГРЮЛ</span>
                     </a>

@@ -33,8 +33,8 @@ urlpatterns = [
 
     url(r'^$', views.home, name='home'),
 
-    url(r'^ru/$', views.page),
-    url(r'^en/$', views.page),
+    url(r'^ru/$', views.page, name='page'),
+    url(r'^en/$', views.page, name='page'),
 
 
     url(r'^admin/', admin.site.urls),

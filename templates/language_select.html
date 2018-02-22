@@ -1,13 +1,15 @@
 {% extends "base.html" %}
+{% load fullurl %}
 
 {% block extra_head %}
-    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css">
-    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="{{ STATIC_URL }}css/animate.css" rel="stylesheet" type="text/css">
+
+    <link href="{% fullstatic "css/style.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% fullstatic "css/bootstrap.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% fullstatic "css/animate.css" %}" rel="stylesheet" type="text/css">
 
     <style>
         body {
-            background: url("{{ STATIC_URL }}img/pw_maze_black_2X.png") repeat;
+            background: url("{% fullstatic "img/pw_maze_black_2X.png" %}") repeat;
         }
 
         html, body {
@@ -44,7 +46,7 @@
 
             <header class="header" id="header"><!--header-start-->
                 <figure class="logo animated fadeInDown delay-07s">
-                    <img itemprop="logo" src="{{ STATIC_URL }}img/logo.svg" alt="logo">
+                    <img itemprop="logo" src="{% fullstatic "img/logo.svg" %}" alt="logo">
                 </figure>
 
                 <a class="link animated fadeInUp delay-1s servicelink" href="ru/">Русский</a>

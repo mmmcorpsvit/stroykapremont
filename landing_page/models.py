@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.contrib.sites.models import Site
 # from stroykapremont.settings import MEDIA_URL
 
 from tinymce.models import HTMLField
@@ -22,6 +23,19 @@ from filer.fields.image import FilerImageField
 #     full_url = '%s%s' % (MEDIA_URL, url)
 #     result = '<a href="%s"><img src="%s" %s %s/></a>' % (full_url, full_url, s_height, s_alt)
 #     return result
+
+
+class SiteSettings(models.Model):
+    site = models.OneToOneField(
+        Site, related_name='settings', on_delete=models.CASCADE)
+
+    title = models.CharField(max_length=50)
+    desc = models.CharField(max_length=150)
+
+
+
+    def __str__(self):
+        return self.title
 
 
 class Projects(SortableMixin):
@@ -83,17 +97,18 @@ class Project_Images(SortableMixin):
     #     return ''
 
 
-class SiteSettings(models.Model):
-    site_name = models.TextField(max_length=50)
-    site_description = models.TextField(max_length=100)
-
-    contact_streetAddress = models.TextField(max_length=200)
-    contact_addressLocality = models.TextField(max_length=200)
-    contact_addressRegion = models.TextField(max_length=200)
-
-    contact_telephone = models.TextField(max_length=30)
-
-    contact_hours = HTMLField()
-
-
-
+#
+# class SiteSettings(models.Model):
+#     site_name = models.TextField(max_length=50)
+#     site_description = models.TextField(max_length=100)
+#
+#     contact_streetAddress = models.TextField(max_length=200)
+#     contact_addressLocality = models.TextField(max_length=200)
+#     contact_addressRegion = models.TextField(max_length=200)
+#
+#     contact_telephone = models.TextField(max_length=30)
+#
+#     contact_hours = HTMLField()
+#
+#
+#

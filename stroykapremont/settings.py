@@ -2,6 +2,7 @@ import os
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -23,6 +24,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 SITE_NAME = 'ООО "Стройкапремонт"'
 
+SITE_ID = 1
 
 # Application definition
 INSTALLED_APPS = [
@@ -31,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 
     # 'mptt',
@@ -39,6 +42,8 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'filer',
     'tinymce',
+
+    'fullurl',
 
     'landing_page',
 ]
@@ -54,7 +59,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
 ]
 
 ROOT_URLCONF = 'stroykapremont.urls'

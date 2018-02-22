@@ -11,8 +11,9 @@ Django LandPage based project
 * https://github.com/matthiask/django-content-editor/
 
 
-
 ***Deploy:***
+* https://github.com/Aviah/one-click-django-server
+
 
 * add alias for favicon.ico, use:
 

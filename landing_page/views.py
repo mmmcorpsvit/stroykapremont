@@ -4,7 +4,14 @@ from django.shortcuts import render
 from django.utils import translation
 
 from stroykapremont import settings
-from .models import Projects, Project_Images
+from .models import Projects, Project_Images, SiteSettings
+
+
+def get_site_settings(request):
+    # must containe always one record
+    site_settings = SiteSettings.objects.first()
+
+    return site_settings
 
 
 def page(request):
@@ -12,7 +19,7 @@ def page(request):
     translation.activate(language)
     request.LANGUAGE_CODE = translation.get_language()
 
-    data = dict()
+    # data = dict()
 
     projects = Projects.objects.all()
     projects_images = Project_Images.objects.all()
@@ -21,11 +28,14 @@ def page(request):
     #     portfolio = Projects.objects.all()
     # except Projects.DoesNotExist:
     #     raise Http404("Poll does not exist")
-    return render(request, 'page.html', {'data': data,
-                                         'projects': projects,
-                                         'projects_images': projects_images,
-                                         })
+    return render(request, 'page.html', {
+        'site_settings': get_site_settings(request),
+        'projects': projects,
+        'projects_images': projects_images,
+    })
 
 
 def home(request):
-    return render(request, 'language_select.html')
+    return render(request, 'language_select.html', {
+                      'site_settings': get_site_settings(request)
+                  })
