@@ -4,18 +4,19 @@
 
 
 {% block extra_head %}
+    <!--[if IE]><style type="text/css">.pie {behavior:url({% fullstatic "PIE.htc" %});}</style><![endif]-->
     <link href="{% fullstatic "css/bootstrap.css" %}" rel="stylesheet" type="text/css">
     <link href="{% fullstatic "css/style.css" %}" rel="stylesheet" type="text/css">
-
     <link href="{% fullstatic "css/responsive.css" %}" rel="stylesheet" type="text/css">
     <link href="{% fullstatic "css/animate.css" %}" rel="stylesheet" type="text/css">
-
     <link href="{% fullstatic "css/portfolio.css" %}" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="{% fullstatic "js/bootstrap.js" %}"></script>
+    <script type="text/javascript" src="{% fullstatic "js/wow.js" %}"></script>
+    <script type="text/javascript" src="{% fullstatic "js/classie.js" %}"></script>
 
     <!--Font awesome-->
     <link href="{% fullstatic "css/font-awesome.css" %}" rel="stylesheet" type="text/css">
-
-    <!--[if IE]><style type="text/css">.pie {behavior:url({% fullstatic "PIE.htc" %});}</style><![endif]-->
 
     <!--jquery-->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
@@ -27,10 +28,6 @@
     <!--fancybox-->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js'></script>
     <link href='http://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css' rel='stylesheet' type='text/css'>
-
-    <script type="text/javascript" src="{% fullstatic "js/bootstrap.js" %}"></script>
-    <script type="text/javascript" src="{% fullstatic "js/wow.js" %}"></script>
-    <script type="text/javascript" src="{% fullstatic "js/classie.js" %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -56,25 +53,18 @@
 
 
     {% include "service.html" %}
-
-
     {% include "portfolio.html" %}
-
 
 
     <section class="business-talking"><!--business-talking-start-->
         <div class="container">
-{#             style="color:#888888;"#}
-            <h2>{% trans 'Давайте говорить о бизнесе' %}...</h2>
+            <h2 style="text-shadow: 1px 1px 2px black, 0 0 1em red;">{% trans 'Давайте говорить о бизнесе' %}...</h2>
         </div>
     </section><!--business-talking-end-->
 
 
     {% include 'team.html' %}
-
-
     {% include 'contacts.html' %}
-
     {% include 'footer.html' %}
 
 {% endblock %}
